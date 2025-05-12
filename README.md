@@ -18,6 +18,8 @@ npx hardhat ignition deploy ./ignition/modules/Lock.js
 git clone https://github.com/arenran02/bike_tracker && cd bike-tracker
 npm install
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npm install --save-dev @nomicfoundation/hardhat-toolbox
+npm install dotenv
 npx hardhat node
 npx hardhat compile
 npx hardhat run scripts/deploy.js --network localhost
