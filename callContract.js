@@ -2,6 +2,8 @@ const { ethers } = require("ethers");
 const fs = require("fs");
 const path = require("path");
 
+require('dotenv').config();
+
 // 1. ABI 가져오기
 const artifactPath = path.join(__dirname, "artifacts", "contracts", "BicycleTracker.sol", "BicycleTracker.json");
 const contractJson = JSON.parse(fs.readFileSync(artifactPath, "utf8"));
