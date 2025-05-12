@@ -10,11 +10,12 @@ const contractJson = JSON.parse(fs.readFileSync(artifactPath, "utf8"));
 const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
 
 // 3. 테스트용 계정 (Hardhat 실행 시 나오는 private key 중 하나)
-const privateKey = "0xea6c44ac03bff858b476bba40716402b03e41b8e97e276d1baec7c37d42484a0"; // 반드시 ""로 감싸서 넣기
+const privateKey = process.env.PRIVATE_KEY;
 const wallet = new ethers.Wallet(privateKey, provider);
 
 // 4. 배포된 컨트랙트 주소
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // 예: "0xAbC123..."
+const contractAddress = process.env.CONTRACT_ADDRESS;
+ // 예: "0xAbC123..."
 
 const contract = new ethers.Contract(contractAddress, contractJson.abi, wallet);
 
