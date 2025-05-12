@@ -11,3 +11,17 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+
+=================================================================
+
+```shell
+git clone https://github.com/arenran02/bike_tracker && cd bike-tracker
+npm install
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npx hardhat node
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network localhost
+node callContract.js
+```
+
+node.js 설치
